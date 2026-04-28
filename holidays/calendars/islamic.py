@@ -9,11 +9,9 @@
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
-# mypy: disable-error-code="assignment"
 
 from collections.abc import Iterable
 from datetime import date
-from typing import Any
 
 from holidays.calendars.custom import _CustomCalendar
 from holidays.calendars.gregorian import (
@@ -843,7 +841,7 @@ class _IslamicLunar:
         2076: (DEC, 6),
     }
 
-    EID_AL_ADHA_DATES: dict[Any, Any] = {
+    EID_AL_ADHA_DATES = {
         1925: (JUL, 2),
         1926: (JUN, 21),
         1927: (JUN, 10),
@@ -999,7 +997,7 @@ class _IslamicLunar:
         2077: (OCT, 27),
     }
 
-    EID_AL_FITR_DATES: dict[Any, Any] = {
+    EID_AL_FITR_DATES = {
         1925: (APR, 24),
         1926: (APR, 14),
         1927: (APR, 3),
@@ -4106,12 +4104,15 @@ class _IslamicLunar:
 
 class _IslamicMabimsLunar(_IslamicLunar):
     """
-    Islamic holidays based on MABIMS (Brunei, Indonesia, Malaysia, Singapore) criteria.
+    A class to handle Hijri dates based on MABIMS criteria.
+    Credits:
+    This data was generated using the hilal-calendar-mabims
+    library by AliCoder8.
+    Source: https://github.com/AliCoder8/hilal-calendar-mabims
+    License: MIT (see LICENSE file)
     """
 
     EID_AL_ADHA_DATES = _IslamicLunar.EID_AL_ADHA_DATES | {
-        # Prior to 2022 same as general lunar calendar
-        # From 2022 onwards MABIMS specific dates often differ from the general lunar calendar
         2023: (JUN, 29),
         2024: (JUN, 17),
         2025: (JUN, 7),
@@ -4128,7 +4129,7 @@ class _IslamicMabimsLunar(_IslamicLunar):
         2036: (FEB, 8),
         2037: (JAN, 27),
         2038: (JAN, 16),
-        2039: [(JAN, 6), (DEC, 26)],
+        2039: ((JAN, 6), (DEC, 26)),
         2040: (DEC, 15),
         2041: (DEC, 4),
         2042: (NOV, 23),
@@ -4161,7 +4162,7 @@ class _IslamicMabimsLunar(_IslamicLunar):
         2069: (FEB, 3),
         2070: (JAN, 23),
         2071: (JAN, 12),
-        2072: [(JAN, 1), (DEC, 20)],
+        2072: ((JAN, 1), (DEC, 20)),
         2073: (DEC, 10),
         2074: (NOV, 29),
         2075: (NOV, 19),
@@ -4170,7 +4171,6 @@ class _IslamicMabimsLunar(_IslamicLunar):
     }
 
     EID_AL_FITR_DATES = _IslamicLunar.EID_AL_FITR_DATES | {
-        # MABIMS specific dates often differ from the general lunar calendar
         2023: (APR, 22),
         2024: (APR, 10),
         2025: (MAR, 31),
@@ -4181,7 +4181,7 @@ class _IslamicMabimsLunar(_IslamicLunar):
         2030: (FEB, 4),
         2031: (JAN, 25),
         2032: (JAN, 14),
-        2033: [(JAN, 3), (DEC, 23)],
+        2033: ((JAN, 3), (DEC, 23)),
         2034: (DEC, 12),
         2035: (DEC, 1),
         2036: (NOV, 20),
@@ -4213,7 +4213,7 @@ class _IslamicMabimsLunar(_IslamicLunar):
         2062: (FEB, 11),
         2063: (JAN, 31),
         2064: (JAN, 20),
-        2065: [(JAN, 8), (DEC, 29)],
+        2065: ((JAN, 8), (DEC, 29)),
         2066: (DEC, 19),
         2067: (DEC, 8),
         2068: (NOV, 27),

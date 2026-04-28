@@ -47,10 +47,10 @@ class TestIndonesia(CommonCountryTests, TestCase):
 
     # Test that Indonesia uses the MABIMS lunar calendar for Islamic holidays
     def test_indonesia_uses_mabims_calendar(self):
-        id = Indonesia()
-        self.assertIsInstance(id._islamic_calendar, _IslamicMabimsLunar)
-        self.assertEqual("Hari Raya Idul Fitri (perkiraan)", id.get("2026-03-21"))
-        self.assertEqual("Hari Raya Idul Adha (perkiraan)", id.get("2026-05-27"))
+        idn = Indonesia()
+        self.assertIsInstance(idn._islamic_calendar, _IslamicMabimsLunar)
+        self.assertEqual("Hari Raya Idul Fitri (perkiraan)", idn.get("2026-03-21"))
+        self.assertEqual("Hari Raya Idul Adha (perkiraan)", idn.get("2026-05-27"))
 
     def test_special_government(self):
         dts = (

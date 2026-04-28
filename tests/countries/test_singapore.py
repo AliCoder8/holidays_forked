@@ -43,7 +43,7 @@ class TestSingapore(CommonCountryTests, TestCase):
     def test_hijri_holidays(self):
         self.assertHoliday(
             # <= 1968 holidays
-            # "1968-01-02",
+            "1968-01-02",
             # > 2022
             "2050-06-21",  # Hari Raya Puasa
             "2050-08-28",  # Hari Raya Haji
